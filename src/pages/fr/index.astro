@@ -1,1 +1,64 @@
-index at fr
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { globalVars } from '../../i18n/utils';
+const pageTitle = "Classification de l'information";
+const lang = "fr";
+---
+
+<BaseLayout pageTitle={globalVars.siteTitle.fr} lang={lang}>
+
+	<gcds-container size="xl" padding="400" centered="true">
+		<gcds-heading tag="h1">
+			{pageTitle}
+		</gcds-heading>
+
+        <gcds-text size="caption" character-limit="false">
+            
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, eos deleniti laboriosam tempora impedit quia at ratione nihil tempore ipsam.</p>
+
+        </gcds-text>
+
+		<gcds-details details-title="Types de classifications de s&eacute;curit&eacute;">
+            <gcds-text size="caption" character-limit="false"> 
+                <ul>
+                    <li><strong>Non classifi&eacute;</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, minima.</li>
+        
+                    <li><strong>Prot&eacute;g&eacute; A</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, nisi.</li>
+
+                    <li><strong>Prot&eacute;g&eacute; B</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, cupiditate!</li>
+
+                    <li><strong>Prot&eacute;g&eacute; C</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, doloribus. </li>
+
+                    <li><strong>Confidentiel</strong> applies to information that, if compromised, could cause injury to the national interest.  </li>
+
+                    <li><strong>Secret</strong> applies to information that, if compromised, could cause serious injury to the national interest. </li>
+
+                    <li><strong>Très secret</strong> applies to information that, if compromised, could cause grave injury to the national interest.</li>
+                </ul>           
+                <p><strong>Note:</strong> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore nostrum dolorem ipsa vitae laboriosam ipsam impedit aliquid deserunt deleniti, tenetur quam voluptatum, sint maiores. Commodi aut consectetur voluptates porro corrupti. </p>
+
+                <p><a href="./classification">Cliquez ici</a> pour apprendre comment g&eacute;rer l'information selon sa classification.</p>
+            </gcds-text>		    
+		</gcds-details>	
+
+        <p>&nbsp;</p>
+
+        <gcds-grid columns-desktop="1fr 1fr" columns-tablet="1fr 1fr" columns="1fr">
+            <gcds-card
+                card-title="Classification de l'information"
+                href="/fr/classification-tool"
+                badge="Nouveau"
+                description="D&eacute;terminer si votre information est Prot&eacute;g&eacute; ou Classifi&eacute;e en utilisant cet outil."
+            >
+            </gcds-card>        
+
+            <gcds-card
+                card-title="Outil d'&eacute;valuation de pr&eacute;judice"
+                href="/fr/injury-tool"
+                badge="Nouveau"
+                description="D&eacute;terminer le niveau de s&eacute;curit&eacute; de votre information en utilisant l'outil d'&eacute;valuation de pr&eacute;judice."
+            >
+            </gcds-card>
+        </gcds-grid>
+	</gcds-container>
+</BaseLayout>

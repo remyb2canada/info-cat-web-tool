@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { globalVars } from '../../i18n/utils';
+const pageTitle = "Information Classification Tool";
+const lang = "en";
+---
+
+<BaseLayout pageTitle={globalVars.siteTitle.en} lang={lang}>
+
+	<gcds-container size="xl" padding="400" centered="true">
+		<gcds-heading tag="h1">
+			{pageTitle}
+		</gcds-heading>
+
+        <gcds-text size="caption" character-limit="false">
+            
+            <p>There are 3 main security classifications:</p>
+        <ul>
+            <li><strong>Unclassified: </strong>Applies to information that would not cause any injury and does not need safeguarding.</li>
+            <li><strong>Protected: </strong>Applies to information or assets that, if compromised, could reasonably be expected to cause injury to a non-national interest such as private, business, or other non-national interests. </li>
+            <li><strong>Classified: </strong>Applies to information or assets that, if compromised, could reasonably be expected to cause injury to the national interest, defence, and maintenance of the social, political, and economic stability of Canada.</li>
+        </ul>
+        
+            <p>Click here to find out if your information is <strong>Protected</strong></p>
+            <p>Click here to find out if your information is <strong>Classified</strong></p>
+
+        </gcds-text>
+
+        <!--- PROTECTED QUESTIONNAIRE -->
+        <div>
+
+        </div>
+
+        <!--- CLASSIFIED QUESTIONNAIRE -->
+
+	</gcds-container>
+</BaseLayout>
+
+<!--- Include VueJS library to have a functioning questionnaire -->

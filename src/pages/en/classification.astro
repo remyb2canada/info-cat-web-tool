@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { globalVars } from '../../i18n/utils';
+const pageTitle = "About Information Classification";
+const lang = "en";
+---
+
+<BaseLayout pageTitle={globalVars.siteTitle.en} lang={lang}>
+
+	<gcds-container size="xl" padding="400" centered="true">
+		<gcds-heading tag="h1">
+			{pageTitle}
+		</gcds-heading>
+
+        <gcds-text size="caption" character-limit="false">
+            
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis vero reiciendis minima. Quae excepturi similique in corporis velit. Quasi, dicta.</p>
+
+        </gcds-text>
+
+	</gcds-container>
+</BaseLayout>

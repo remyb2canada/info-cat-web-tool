@@ -1,3 +1,10 @@
+export const globalVars = {
+    siteTitle: {
+        en: "Information Classification",
+        fr: "Classification d'information"
+    },    
+};
+
 // detects the page languaged based on URL
 // from https://docs.astro.build/en/recipes/i18n/
 export function getLangFromUrl(url) {
