@@ -1,0 +1,48 @@
+---
+import { getLangFromUrl, translateURL } from '../i18n/utils';
+const { pageTitle, navLinks } = Astro.props;
+const currentLang = getLangFromUrl(Astro.url);
+const transLang = currentLang == "en" ? "fr" : "en";
+---
+
+<gcds-header
+    lang-href={translateURL(Astro.url, transLang)}
+>
+    
+    <div slot="banner" class="prototype-banner">
+        <div class="prototype-label">PROTOTYPE</div>
+        This tool is currently being piloted on a small scale.
+    </div>
+
+    <gcds-top-nav slot="menu" label="Main menu" alignment="right">
+      <gcds-nav-link slot="home" href={`/${currentLang}`} class="home-link link-inherit link-no-underline">{pageTitle}</gcds-nav-link>
+     
+		{
+			navLinks.map((a) => 
+        <gcds-nav-link href={a.url}>
+            {a.label}
+        </gcds-nav-link>
+			)
+		}
+      </gcds-top-nav>
+
+</gcds-header>
+
+<style>
+    .prototype-banner {
+        background-color: var(--gcds-bg-primary);
+        color: var(--gcds-text-light);
+        padding: 15px;
+    }
+
+    .prototype-label {
+        text-align: center;
+        color: var(--gcds-text-light);
+        font-weight: bold;
+        border-color: var(--gcds-text-light);
+        border-style: solid;
+        border-width: 1px;
+        display: inline-block;
+        padding: 10px;
+    }
+</style>

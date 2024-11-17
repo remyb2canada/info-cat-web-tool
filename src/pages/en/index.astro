@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const pageTitle = "Information Classification";
+const lang = "en";
+---
+
+<BaseLayout pageTitle={pageTitle} lang={lang}>
+
+	<gcds-container size="xl" padding="400" centered="true">
+		<gcds-heading tag="h1">
+			{pageTitle}
+		</gcds-heading>
+
+        <gcds-text size="caption" character-limit="false">
+            
+            <p>This site is designed to help government of Canada employees apply the appropriate security classification to information and assets.</p>
+
+            <p><strong>Information Security Classification</strong> is the application of a security level to sensitive information or assets that indicates the protective measures needed to keep information secure. Security Classification is assessed based on the degree of injury that could result from compromise of confidentiality, availability, integrity, or value of information.</p>
+
+            <p><strong>Note:</strong> A security classification does not guarantee that information will not be released in response to an ATIP request.</p>
+
+        </gcds-text>
+
+		<gcds-details details-title="Information Security Classifications">
+		          
+		</gcds-details>	
+	</gcds-container>
+</BaseLayout>

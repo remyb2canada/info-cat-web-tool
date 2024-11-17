@@ -1,0 +1,8 @@
+---
+import { getLangFromUrl } from '../i18n/utils';
+const currentLang = getLangFromUrl(Astro.url);
+---
+<gcds-footer
+  lang={currentLang}
+>
+</gcds-footer>
