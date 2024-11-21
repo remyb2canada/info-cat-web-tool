@@ -1,0 +1,13 @@
+[
+    "Does the document contain information relating to the race, national or ethnic origin, colour, religion, age or marital status of the individual?",
+    "Does the document contain information relating to the education or the medical, criminal or employment history of the individual or information relating to financial transactions in which the individual has been involved?",
+    "Does the document contain any identifying number, symbol or other particular assigned to the individual?",
+    "Does the document contain the address, fingerprints or blood type of the individual?",
+    "Does the document contain the personal opinions or views of the individual except where they are about another individual or about a proposal for a grant, an award or a prize to be made to another individual by a government institution or a part of a government institution specified in the regulations?",
+    "Does the document contain correspondence sent to a government institution by the individual that is implicitly or explicitly of a private or confidential nature, and replies to such correspondence that would reveal the contents of the original correspondence?",
+    "Does the document contain the views or opinions of another individual about the individual?",
+    "Does the document contain the views or opinions of another individual about a proposal for a grant, an award or a prize to be made to the individual by an institution or a part of an institution referred to in paragraph (e), but excluding the name of the other individual where it appears with the views or opinions of the other individual?",
+    "Does the document contain the name of the individual where it appears with other personal information relating to the individual or where the disclosure of the name itself would reveal information about the individual?",
+    "Does the document contain financial or contractual transactions of an individual, a business or an organization?",
+    "Does the document contain departmental information related to business continuity plans (BCP), floor plan including security systems, secure rooms, etc.., third party business information provided in confidence, or internal policies and plans not published to the public?"
+]
