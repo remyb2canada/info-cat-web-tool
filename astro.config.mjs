@@ -13,5 +13,15 @@ export default defineConfig({
       }        
     },
 
-  integrations: [vue()]
+  integrations: [vue()],
+
+  // make sure dependencies are included in the static site build process
+  // this means adding the GCDS node_modules (from the package.json)
+  // COMMENTED OUT BECAUSE IT DOESN'T SEEM TO WORK
+  // instead, the production build process needs to copy package.json into the 'dist/' folder and a `npm install` needs to be run
+  //vite: {
+  //  ssr: {
+  //    noExternal: true
+  //  }
+  //}
 });
