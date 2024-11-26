@@ -13,11 +13,11 @@ const lang = getLangFromUrl(Astro.url);
 const navLinks = [
 	{
 		label: lang === "en" ? "Classification" : "Classification",
-		url: getRelativeLocaleUrl(lang, "index")
+		url: getRelativeLocaleUrl(lang, "/classification")
 	},
 	{
-		label: lang === "en" ? "Injury Assessment" : "Evaluation des Prejudices",
-		url: getRelativeLocaleUrl(lang, "injury-tool")
+		label: lang === "en" ? "Tools" : "Outils",
+		url: getRelativeLocaleUrl(lang, "/")
 	}
 ];
 

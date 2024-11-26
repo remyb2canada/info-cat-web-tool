@@ -1,0 +1,56 @@
+
+        <gcds-text size="caption" character-limit="false">
+        
+            <div class="form_heading">{{ props.formTitle }} -- Is My Information PROTECTED?</div>
+
+            <form @submit.prevent="submitAnswers">
+                <p>{{ props.formDescription }} -- Answer “Yes” or “No” to the following questions.</p>
+
+                <div v-for="(q, index) in formQuestionsTracker" :id=q.id class="questionnaire">
+                    <div class="question">
+                        {{ q.number }} . {{ q.text }}
+                    </div>
+
+                    <input type="radio" :id="q.id + 'y'" :name="q.id" value="y" v-model="formQuestionsTracker[index].answer" />
+                    <label :for="q.id + 'y'" class="choices">Yes</label>
+
+                    <input type="radio" :id="q.id + 'n'" :name="q.id" value="n" v-model="formQuestionsTracker[index].answer" />
+                    <label :for="q.id + 'n'" class="choices">No</label>
+
+                    <input type="radio" :id="q.id + 'na'" :name="q.id" value="na" v-model="formQuestionsTracker[index].answer" />
+                    <label :for="q.id + 'na'" class="choices">N/A</label>
+                </div>
+
+                <gcds-button type="submit" button-id="submit-form" name="submit-form" size="small">
+                    Submit Answers
+                </gcds-button>
+                <p>{{ myTest }}</p>
+            </form>
+<!--
+            <div id="idErrorMessageP" v-show="qpHandler.showError">
+                <br />
+                <gcds-error-message message-id="message-propsP">
+                    {{ qpHandler.errorMsg }}
+                </gcds-error-message>
+                <br />
+            </div>
+
+            <div id="idResultP">
+                <div v-if="qpHandler.showResult">
+                    <p>You're information is <strong>{{ qpHandler.infoClass }}</strong><br /></p>
+                    
+                    <div v-if="qpHandler.infoClass === 'Protected'">
+                        <p>Find out at what level (A, B, or C) your information is Protected by performing an <gcds-link href="/en/injury-tool">injury assessment</gcds-link></p>
+                    </div>
+                    <div v-else>
+                        <p>Although your information is not classified as Protected, it may be Classified. 
+                            <button @click="toggleForm('classified')" class="my_button">Click To Find Out</button>
+                        </p>
+                    </div>
+                </div>
+                <div v-else>
+                    <p>Answer the above questions then click 'Submit Answers' to know the result.</p>
+                </div>
+            </div>
+-->
+        </gcds-text>

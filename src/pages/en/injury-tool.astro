@@ -1,10 +1,11 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { globalVars } from '../../i18n/utils';
 const pageTitle = "Injury Assessment Tool";
 const lang = "en";
 ---
 
-<BaseLayout pageTitle={pageTitle} lang={lang}>
+<BaseLayout pageTitle={globalVars.siteTitle.en} lang={lang}>
 
 	<gcds-container size="xl" padding="400" centered="true">
 		<gcds-heading tag="h1">
@@ -45,13 +46,8 @@ const lang = "en";
 		</gcds-details>	
 
         <p>&nbsp;</p>
-        <gcds-card
-            card-title="Injury Assessment Tool"
-            href="./injury-tool"
-            badge="New"
-            description="Determine the level of security classification for your information by using this tool."
-        >
-        </gcds-card>
-
+        
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, ex incidunt minus amet ullam sed, ad aspernatur soluta nihil at, porro itaque doloremque quisquam. Ad eligendi vel veniam delectus explicabo.
+        
 	</gcds-container>
 </BaseLayout>

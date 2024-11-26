@@ -13,7 +13,16 @@ export default defineConfig({
       }        
     },
 
-  integrations: [vue()],
+    // VueJS integration
+    // Identifies the GCDS components as custom elements and have VueJS skip resolution (to avoid the "failed to resolve component")
+  integrations: [vue({
+    template: {
+      compilerOptions: {
+        // treat any tag that starts with gcds- as custom elements
+        isCustomElement: (tag) => tag.startsWith('gcds-'),
+      }
+    }
+  })],
 
   // make sure dependencies are included in the static site build process
   // this means adding the GCDS node_modules (from the package.json)

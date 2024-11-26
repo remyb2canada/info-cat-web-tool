@@ -1,8 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { globalVars } from '../../i18n/utils';
-import QuestionnaireProtected from '../../components/vuejs/QuestionnaireProtected.vue';
-import questionsProtected from '../../data/questionsProtected.json';
+import ClassTool from '../../components/vuejs/ClassificationTool.vue';
 
 const pageTitle = "Information Classification Tool";
 const lang = "en";
@@ -21,31 +20,20 @@ const lang = "en";
             <ul>
                 <li>
                     <strong>Unclassified: </strong>
-                    <span>Applies to information that would not cause any injury.</span>
+                    <span>information that would not cause any injury.</span>
                 </li>
                 <li>
                     <strong>Protected: </strong>
-                    <span>Applies to information that, if compromised, could cause injury to a <i>non-national</i> interest (e.g., private or business).</span>
+                    <span>information that, if compromised, could cause injury to a <i>non-national</i> interest (e.g., private or business).</span>
                 </li>
                 <li>
                     <strong>Classified: </strong>
-                    <span>Applies to information that, if compromised, could cause injury to a <i>national</i> interest (e.g., defence, maintenance of the social, political, and economic stability of Canada).</span>
+                    <span>information that, if compromised, could cause injury to a <i>national</i> interest (e.g., defence, maintenance of the social, political, and economic stability of Canada).</span>
                 </li>                
             </ul>
-            
-            <gcds-button button-id="buttonid1" name="buttonname1" size="small">
-                See if my information is <strong>Protected</strong>
-            </gcds-button>
-
-            <gcds-button button-id="buttonid2" name="buttonname2" size="small">
-                See if my information is <strong>Classified</strong>
-            </gcds-button>
 
         </gcds-text>
 
-        <!--- PROTECTED QUESTIONNAIRE -->
-        <!--- we need to tell Astro to hydrate that component so that the JavaScript inside is included (client:load) -->
-        <QuestionnaireProtected isVisible="false" client:load />
-
+        <ClassTool client:load />
 	</gcds-container>
 </BaseLayout>
