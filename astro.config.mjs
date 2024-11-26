@@ -14,7 +14,7 @@ export default defineConfig({
     },
 
     // VueJS integration
-    // Identifies the GCDS components as custom elements and have VueJS skip resolution (to avoid the "failed to resolve component")
+    // Identifies the GCDS components as custom elements for VueJS to skip resolution (to avoid the "failed to resolve component")
   integrations: [vue({
     template: {
       compilerOptions: {

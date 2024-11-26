@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { globalVars } from '../../i18n/utils';
+const pageTitle = "Page 3 (FR)";
+const lang = "fr";
+---
+
+<BaseLayout pageTitle={globalVars.siteTitle.fr} lang={lang}>
+	<gcds-container size="xl" padding="400" centered="true">
+        <Breadcrumbs lang={lang} />
+		<gcds-heading tag="h1">
+			{pageTitle}
+		</gcds-heading>
+
+        <gcds-text character-limit="false">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis vero reiciendis minima. Quae excepturi similique in corporis velit. Quasi, dicta.
+			<br /><br />
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, quidem? Consequuntur enim vero suscipit hic tenetur consequatur quaerat officiis voluptatibus reiciendis voluptate explicabo aliquam, doloremque sapiente eligendi dicta mollitia assumenda.
+			<br /><br />
+			Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo vel doloremque hic perspiciatis a voluptas voluptates harum illo aperiam saepe. Quisquam tempore magni aperiam repellendus esse. Commodi, iure impedit. Itaque.
+
+        </gcds-text>
+	</gcds-container>
+</BaseLayout>

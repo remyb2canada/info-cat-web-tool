@@ -44,7 +44,7 @@
             <gcds-button type="submit" button-id="submit-form" name="submit-form" size="small">
                 Submit Answers
             </gcds-button>
-            myTest = {{ myTest }}
+            
         </form>
 
         <div id="idErrorMessageP" v-show="showError">
@@ -64,21 +64,17 @@
                     <p>Find out at what level (A, B, or C) your information is Protected by performing an <gcds-link href="/en/injury-tool">injury assessment</gcds-link></p>
                 </div>
                 <div v-else>
-                    <p>Although your information is not classified as Protected, it may be Classified. 
-                            <button @click="toggleForm('classified')" class="my_button">Click To Find Out</button>
-                    </p>
+                    <p>Although your information is not classified as Protected, it may be Classified.</p>
                 </div>
             </div>
             <div v-else-if="evalType === 'classified'">
                 <div v-if="positiveAnswer">
-                    <p>You're information is <strong>CLASSIFIED</strong><br /></p>
+                    <p class="result">You're information is <strong>CLASSIFIED</strong><br /></p>
                     
                     <p>Find out at what level (Confidential, Secret, or Top Secret) your information is Classified at by performing an <gcds-link href="/en/injury-tool">injury assessment</gcds-link></p>
                 </div>
                 <div v-else>
-                    <p>Although your information is not deemed Classified, it may be Protected. 
-                            <button @click="toggleForm('classified')" class="my_button">Click To Find Out</button>
-                    </p>
+                    <p>Although your information is not deemed Classified, it may be Protected.</p>
                 </div>
             </div>
             <div v-else>
@@ -134,7 +130,7 @@
         let number = i+1
         // push a new object in the formQuestionsTracker array
         formQuestionsTracker.value.push({
-            id: 'q' + number,
+            id: props.evalType + 'q' + number,
             number: number,
             answer: null,
             text: props.questions[i]
@@ -221,7 +217,7 @@
     white-space: nowrap
 }
 
-p .result {
+.result {
     color: maroon;
     font-size: 1em;
 }

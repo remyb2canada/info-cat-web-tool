@@ -1,0 +1,11 @@
+---
+const { lang } = Astro.props;
+let myLang = lang;
+if (!myLang) myLang = 'en';
+---
+
+<gcds-breadcrumbs hide-canada-link>
+    <gcds-breadcrumbs-item href=`/${myLang}/page-1``>Page 1</gcds-breadcrumbs-item>
+    <gcds-breadcrumbs-item href=`/${myLang}/page-2``>Page 2</gcds-breadcrumbs-item>
+    <gcds-breadcrumbs-item href=`/${myLang}/page-3``>Page 3</gcds-breadcrumbs-item>
+</gcds-breadcrumbs>

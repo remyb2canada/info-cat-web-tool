@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { globalVars } from '../../i18n/utils';
+import ClassTool from '../../components/vuejs/ClassificationTool.vue';
+
+const pageTitle = "Classification de l'information";
+const lang = "fr";
+---
+
+<BaseLayout pageTitle={globalVars.siteTitle.fr} lang={lang}>
+
+	<gcds-container size="xl" padding="400" centered="true">
+		<gcds-heading tag="h1">
+			{pageTitle}
+		</gcds-heading>
+        
+        <gcds-text size="caption" character-limit="false">
+            <p>Version fran&ccedil;aise pas encore faites...</p>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium consequatur accusantium explicabo dignissimos vero deserunt quod placeat aliquam dolores, id et natus sint nihil. Quia nobis perspiciatis neque alias rem.</p>
+        </gcds-text>
+
+	</gcds-container>
+</BaseLayout>

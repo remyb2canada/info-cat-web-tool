@@ -2,22 +2,24 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import { globalVars } from '../../i18n/utils';
-const pageTitle = "About Information Classification";
+const pageTitle = "Page 2";
 const lang = "en";
 ---
 
 <BaseLayout pageTitle={globalVars.siteTitle.en} lang={lang}>
+	
 	<gcds-container size="xl" padding="400" centered="true">
-		<Breadcrumbs lang="en" />
+		<Breadcrumbs lang={lang}/>
 		<gcds-heading tag="h1">
 			{pageTitle}
 		</gcds-heading>
 
-        <gcds-text size="caption" character-limit="false">
-            
+        <gcds-text character-limit="false">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis vero reiciendis minima. Quae excepturi similique in corporis velit. Quasi, dicta.
-
+			<br /><br />
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit impedit laudantium, maiores explicabo necessitatibus in illo fuga aliquid hic eum, cum ducimus autem consectetur non iure neque voluptatum tenetur nulla!
+			<br /><br />
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, modi!
         </gcds-text>
 	</gcds-container>
-
 </BaseLayout>

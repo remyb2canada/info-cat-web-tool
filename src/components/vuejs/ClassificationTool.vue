@@ -20,7 +20,7 @@
             
             <button @click="toggleForm('protected')" class="my_button">See if my information is <strong>Protected</strong></button>
 
-            &nbsp;&nbsp;&nbsp;{{ myTest }}
+            &nbsp;&nbsp;&nbsp;
       
             <button @click="toggleForm('classified')" class="my_button">See if my information is <strong>Classified</strong></button>
     
@@ -56,24 +56,24 @@
     import questionsClassified from '../../data/questionsClassified.json'
     import Questionnaire from './Questionnaire.vue'
 
-    let formProtectedShow = false
-    let formClassifiedShow = false
+    let formProtectedShow = ref(false)
+    let formClassifiedShow = ref(false)
 
     let myTest = ref('myTest')
     
     // Displays either the Classified questionnaire or the Protected questionnaire to the user
     function toggleForm(choice) {
-        
+        // myTest.value = 'in toggleForm for ' + choice
         // reset everything (hide all) before showing the chosen form
-        formProtectedShow = false
-        formClassifiedShow = false
+        formProtectedShow.value = false
+        formClassifiedShow.value = false
 
         if (choice === 'protected') {
-            formProtectedShow = true
+            formProtectedShow.value = true
         }
         
         if (choice === 'classified') {
-            formClassifiedShow = true
+            formClassifiedShow.value = true
         }
     }
 </script>
