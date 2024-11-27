@@ -2,7 +2,7 @@
 
 This is a work in progress so changes are being done periodically everything should be considered work in progress.
 
-## Tech Stack
+## Tech Stackand start the dev environmen
 
 * [Astro Static Site Generator](https://astro.build/)
 * [VueJS](https://vuejs.org/)

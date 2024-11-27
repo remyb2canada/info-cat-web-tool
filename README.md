@@ -15,7 +15,7 @@ You need [Git installed](https://git-scm.com/downloads) on your machine first.
 
 You can deploy this repo on your local machine using the following steps:
 
-Clone this repo locally and start the dev environment
+Clone this repo locally.
 
 ```bash
 $ clone https://github.com/remyb2canada/info-cat-web-tool.git <your-folder-name>
@@ -24,7 +24,7 @@ $ cd <your-folder-name>
 
 You can either deploy the site locally on your machine by having Node.JS installed, or a container (e.g. Docker).
 
-*** With Node.JS installed on your machine ***
+** With Node.JS installed on your machine **
 
 Ensure you're in the ```<your-folder-name>``` and that you have Node.JS version 18 or above
 
@@ -49,7 +49,7 @@ $ npm run dev
 
 The site should be running at ```http://localhost:4321/```
 
-*** With a container (e.g. Docker) ***
+** With a container (e.g. Docker) **
 
 TBD, haven't yet experimented with this.
 
