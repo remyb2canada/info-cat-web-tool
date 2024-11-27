@@ -29,7 +29,7 @@ $ cd <your-folder-name>
 
 You can either deploy the site locally on your machine by having Node.JS installed, or a container (e.g. Docker).
 
-** With Node.JS installed on your machine **
+**With Node.JS installed on your machine**
 
 Ensure you're in the ```<your-folder-name>``` and that you have Node.JS version 18 or above
 
@@ -54,7 +54,7 @@ $ npm run dev
 
 The site should be running at ```http://localhost:4321/```
 
-** With a container (e.g. Docker) **
+**With a container (e.g. Docker)**
 
 TBD, haven't yet experimented with this.
 
