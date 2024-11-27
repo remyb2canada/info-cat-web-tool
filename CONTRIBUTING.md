@@ -2,7 +2,7 @@
 
 This is a work in progress so changes are being done periodically everything should be considered work in progress.
 
-## Tech Stackand start the dev environmen
+## Tech Stack
 
 * [Astro Static Site Generator](https://astro.build/)
 * [VueJS](https://vuejs.org/)
@@ -89,7 +89,8 @@ Astro's build process uses the following command:
 
 ```npm run build```
 
-The result is a ```dist/``` folder that will contain the HTML pages compiled from the .astro files
+The result is a ```dist/``` folder that will contain the HTML pages compiled from the .astro files.
+That ```dist/``` folder is where the static site will be.
 
 Because of its integration with GC Design System (web components part of the node_modules), the build process requires additional commands. 
 This because node.js applications typically require copying the ```package.json``` file into the ```dist/``` folder and run ```npm install``` to install the dependencies ([resolution found here](https://github.com/withastro/astro/issues/7247#issuecomment-1576200139)).
