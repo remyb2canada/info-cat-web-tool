@@ -1,3 +1,6 @@
+# dist/ folder is the build output
+dist/
+
 # generated types
 .astro/
 
