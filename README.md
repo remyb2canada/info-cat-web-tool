@@ -9,6 +9,11 @@ It contains:
 * *An injuty assessment tool*: a series of questions one can answer to determine at what level of Protected (A, B, or C) or Classified (Confidential, Secret, or Top Secret) is their information.
 * *Guidance*: guidance documentation about how the GC is categorizing its information.
 
+All the information in this repo are based on the following publically available sources:
+
+* (TBS) [Standard on Security Categorization](https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32614)
+* (PSPC) [Contract Security Manual](https://www.tpsgc-pwgsc.gc.ca/esc-src/msc-csm/index-eng.html)
+
 ## :floppy_disk: Install and Run Locally
 
 You need [Git installed](https://git-scm.com/downloads) on your machine first.
