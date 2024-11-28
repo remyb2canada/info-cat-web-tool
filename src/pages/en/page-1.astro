@@ -13,7 +13,51 @@ const lang = "en";
 			{pageTitle}
 		</gcds-heading>
 
-        <gcds-text character-limit="false">
+		<gcds-text character-limit="false">
+			<p>
+				This is a small demo of using Javascript to fetch information from an API. 
+				It uses the <a href="https://open-meteo.com/en/docs">open-meteo API</a>.
+				See an example of a JSON return <a href="https://api.open-meteo.com/v1/forecast?latitude=53.544388&longitude=-113.490929&daily=temperature_2m_max">here</a>.
+			</p>
+
+			<div id="meteo-holder">
+				<div id="meteo-selector">
+					<label for="cities">Select a City: </label>
+					<!--- option values are coordinates: Latitude, Longitude -->
+					<select name="cities" id="meteo-cities" onchange="citySelector(this)">
+						<option value="0, 0" selected>&nbsp;</option>
+						<option value="46.235420, -63.126518">Charlettetown</option>
+						<option value="53.544388, -113.490929">Edmonton</option>
+						<option value="45.963589, -66.643112">Fredericton</option>
+						<option value="44.648766, -63.575237">Halifax</option>
+						<option value="63.74697, -68.51727">Iqaluit</option>
+						<option value="45.421532, -75.697189">Ottawa</option>
+						<option value="46.813049, -71.225739">Québec</option>
+						<option value="50.445210, -104.618896">Regina</option>
+						<option value="45.536530, -73.208618">Saint John's</option>
+						<option value="52.131592, -106.660599">Saskatoon</option>
+						<option value="43.653225, -79.383186">Toronto</option>						
+						<option value="48.428421, -123.365646">Victoria</option>
+						<option value="60.719688, -135.052292">Whitehorse</option>
+						<option value="49.895138, -97.138374">Winnipeg</option>
+						<option value="62.456, -114.35255">Yellowknife</option>						
+					</select>
+				</div>
+				<div id="meteo-display">
+					<p>7 day forecast for the selected city is: </p>
+					<div id="root">
+						<div id="content"></div>
+						<p id="message"></p>
+						<p id="loading"></p>
+					</div>
+				</div>
+			</div>
+
+		</gcds-text>
+
+		<p>&nbsp;</p>
+        
+		<gcds-text character-limit="false">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis vero reiciendis minima. Quae excepturi similique in corporis velit. Quasi, dicta.
 			<br /><br />
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, quidem? Consequuntur enim vero suscipit hic tenetur consequatur quaerat officiis voluptatibus reiciendis voluptate explicabo aliquam, doloremque sapiente eligendi dicta mollitia assumenda.
@@ -22,4 +66,72 @@ const lang = "en";
 
         </gcds-text>
 	</gcds-container>
+
+<script is:inline>
+	// adjusted from https://www.javascripttutorial.net/web-apis/javascript-fetch-api/
+	// This is just to demonstrate how front-end development can use back-end APIs to dynamically change content
+
+	function citySelector(selectedObject) {
+		let coordinates = selectedObject.value.replace(/\s/g, '').split(',');
+		console.log(`in citySelecetor. Lattitude = ${coordinates[0]}, Longitude = ${coordinates[1]}`);
+		
+		// Call the API then handle the resulting data
+		getMeteo(coordinates[0], coordinates[1]).then(data => {
+			// Check if data is valid
+			if (data) {
+				// Log the received data to the console
+				console.log('Data received');
+				updateMeteo(data);
+			}
+		});
+	}
+
+	function updateMeteo(dataObj) {
+		// schema of dataObj is:
+		// daily/time/<#>: date
+		// daily/temperature_2m_max/<#>: temperature
+		// this demo uses a 7 day forecast
+		let days = 7;
+		let htmlContent = '<ul>';
+
+		for (let i = 0; i < days; i++) {
+			htmlContent += `<li>${dataObj.daily.time[i]}: ${dataObj.daily.temperature_2m_max[i]} ${dataObj.daily_units.temperature_2m_max}</li>`;
+		}
+
+		htmlContent += '</ul>';
+		document.querySelector('#content').innerHTML = htmlContent;
+	}
+
+	async function getMeteo(lat, long) {
+		const url = 'https://api.open-meteo.com/v1/forecast?';
+		let apiurl = url + `latitude=${lat}&longitude=${long}&daily=temperature_2m_max`;		
+		console.log('getMeteo = ' + apiurl);
+		
+		// show the loading element in case things are slow
+		const loadingElem = document.querySelector('#loading');
+		loadingElem.innerHTML = 'Loading...';
+
+		try {
+			// Make the API call
+			const response = await fetch(apiurl);
+
+			// Check if the response is OK (status code 200-299)
+			if (!response.ok) {
+				throw new Error(`HTTP error! status: ${response.status}`);
+			}
+
+			// Parse the JSON response
+			const data = await response.json();
+
+			// Return the JSON data
+			return data;			
+		} catch (error) {
+			document.querySelector('#message').textContent = err.message;
+		} finally {
+			loadingElem.innerHTML = '';
+		}
+
+	}
+</script>
+
 </BaseLayout>
